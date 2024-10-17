@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const volumeSlider = document.getElementById('volume-slider');
 
     audio.play();
-    audio.volume = 0.2; // Imposta il volume a un livello medio-basso
+    audio.volume = 0.2; //livello medio-basso
 
     volumeSlider.addEventListener('input', function () {
         audio.volume = volumeSlider.value;
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Modal logic
+    // Modal
     const modal = document.getElementById('welcome-modal');
     const closeModal = document.getElementById('close-modal');
     modal.style.display = 'block';
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = 'none';
     });
 
-    // Repository logic
+    // Repository
     const repoList = document.getElementById('repo-list');
     const scrollLeftBtn = document.getElementById('scroll-left');
     const scrollRightBtn = document.getElementById('scroll-right');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
 
-    // Toggle view logic
+    // Toggle view
     const toggleButton = document.getElementById('toggle-view');
     const mainContent = document.getElementById('main-content');
     const newContent = document.getElementById('new-content');
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Cookie consent logic
+// Cookie
 document.getElementById('acceptCookies').addEventListener('click', function () {
     document.getElementById('cookieConsent').style.display = 'none';
     localStorage.setItem('cookieConsentAccepted', 'true');

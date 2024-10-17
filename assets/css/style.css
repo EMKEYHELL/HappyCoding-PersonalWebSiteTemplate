@@ -228,16 +228,16 @@ footer p {
 
 /* Stile per il pulsante Toggle View */
 .btn-toggle {
-  position: fixed;  /* Posizione fissa */
-  top: 20px;        /* Distanza dal bordo superiore */
-  right: 20px;      /* Distanza dal bordo destro */
+  position: fixed;  
+  top: 20px;        
+  right: 20px;      
   background-color: #007bff;
   color: white;
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1000;    /* Valore alto di z-index per stare sopra altri elementi */
+  z-index: 1000;   
   transition: background-color 0.3s ease;
 }
 
@@ -246,7 +246,7 @@ footer p {
 }
 
 
-/* Nasconde la sezione quando non visibile */
+
 #new-content {
   display: none;
 }
@@ -261,7 +261,7 @@ footer p {
 
 .ide-item {
   text-align: center;
-  width: 120px; /* Aggiunto per assicurare che ogni item abbia la stessa larghezza */
+  width: 120px; 
   transition: transform 0.3s ease;
   text-decoration: none;
   color: black;
@@ -273,7 +273,7 @@ footer p {
 
 .ide-logo {
   width: 80px;
-  height: 80px; /* Imposta un'altezza fissa per uniformare tutti i loghi */
+  height: 80px; 
   transition: opacity 0.3s ease;
 }
 

@@ -16,7 +16,7 @@
 
 <body>
     <header>
-        <button id="toggle-view" class="btn-toggle">Toggle View</button> <!-- Pulsante di toggle -->
+        <button id="toggle-view" class="btn-toggle">Toggle View</button> 
     <img src="https://r2.fivemanage.com/pub/5hz2ov2u94or.png" alt="FiveM Banner" class="banner" style="padding: 0px;margin: 0px;">
     <h1 style="color: #fff;text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);">MKL - Streamer &amp; Sviluppatore</h1>
     <p>Benvenuti sul mio sito personale! Qui trovate tutte le informazioni su di me, i miei progetti e i miei social.</p>
@@ -29,7 +29,7 @@
         </audio>
     </header>
 
-    <!-- Contenuto principale -->
+    <!-- Principale -->
     <div id="main-content">
         <section id="about">
             <h2 style="text-align:center;">Chi sono</h2>
@@ -56,7 +56,7 @@
             <h2 style="text-align:center;">Repository GitHub</h2>
             <button id="scroll-left" class="scroll-button">←</button>
             <ul id="repo-list" class="project-list">
-                <!-- Le repository verranno caricate dinamicamente qui -->
+                <!-- Le repository verranno caricate qui -->
             </ul>
             <button id="scroll-right" class="scroll-button">→</button>
         </section>
@@ -91,11 +91,7 @@
         </section>
     </div>
 
-    <!-- Nuovo contenuto che verrà mostrato con il toggle -->
-    <!-- Nuovo contenuto che verrà mostrato con il toggle -->
-<!-- Nuovo contenuto che verrà mostrato con il toggle -->
-<!-- Nuovo contenuto che verrà mostrato con il toggle -->
-<!-- Nuovo contenuto che verrà mostrato con il toggle -->
+    <!-- Nuovo contenuto -->
 <div id="new-content" style="display: none;">
     <section id="top-ideas">
         <h2 style="text-align: center;">I Migliori IDE per Programmare</h2>
@@ -172,7 +168,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Toggle View Logic
+            // Toggle View
             const toggleButton = document.getElementById('toggle-view');
             const mainContent = document.getElementById('main-content');
             const newContent = document.getElementById('new-content');
