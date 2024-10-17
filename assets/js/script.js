@@ -1,16 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const audio = document.getElementById('background-audio');
     const volumeSlider = document.getElementById('volume-slider');
 
     audio.play();
     audio.volume = 0.2; // Imposta il volume a un livello medio-basso
 
-    volumeSlider.addEventListener('input', function() {
+    volumeSlider.addEventListener('input', function () {
         audio.volume = volumeSlider.value;
     });
 
     const scrollTopButton = document.getElementById('scroll-top');
-    window.onscroll = function() {
+    window.onscroll = function () {
         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
             scrollTopButton.style.display = 'block';
         } else {
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    scrollTopButton.addEventListener('click', function() {
+    scrollTopButton.addEventListener('click', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
@@ -26,7 +26,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('welcome-modal');
     const closeModal = document.getElementById('close-modal');
     modal.style.display = 'block';
-    closeModal.addEventListener('click', function() {
+    closeModal.addEventListener('click', function () {
         modal.style.display = 'none';
     });
 });
+
+document.getElementById('acceptCookies').addEventListener('click', function () {
+    document.getElementById('cookieConsent').style.display = 'none';
+    localStorage.setItem('cookieConsentAccepted', 'true');
+});
+
+window.onload = function () {
+    if (localStorage.getItem('cookieConsentAccepted') === 'true') {
+        document.getElementById('cookieConsent').style.display = 'none';
+    }
+};
