@@ -6,6 +6,7 @@ body {
   line-height: 1.6;
   background: url('https://r2.fivemanage.com/pub/mbhujfm5bdcd.jpg') no-repeat center center fixed;
   background-size: cover;
+  background-color: #000; /* Fallback */
   overflow-x: hidden;
 }
 
@@ -106,10 +107,12 @@ h1, h2 {
   text-align: center;
 }
 
-.skills-list li:hover {
+.skills-list li:hover, .project-list li:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-3px);
+  transition: box-shadow 0.3s, transform 0.3s, color 0.3s;
 }
+
 
 .social-icon, .skill-icon {
   width: 30px;
@@ -119,8 +122,8 @@ h1, h2 {
 footer {
   text-align: center;
   padding: 2rem;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.8); 
+  color: #f0f0f0; 
   margin-top: 4rem;
 }
 
@@ -132,18 +135,92 @@ footer p {
   header {
     padding: 1rem;
   }
-}
 
-@media (max-width: 600px) {
   section {
     padding: 1rem;
   }
-}
 
-@media (max-width: 600px) {
   .social-links a {
     padding: 0.5rem;
     font-size: 0.9rem;
   }
 }
 
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+#repositories {
+  padding: 2rem 1rem;
+  max-width: 900px; /* Uniforma la larghezza rispetto alle altre sezioni */
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Limita il contenuto visibile */
+}
+
+#repo-list {
+  display: flex;
+  overflow-x: scroll; /* Permette lo scorrimento orizzontale */
+  scroll-snap-type: x mandatory;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 1rem;
+}
+
+#repo-list li {
+  background: url('https://r2.fivemanage.com/pub/cwiyl8bgbzq7.png') no-repeat center center;
+  background-size: cover; /* Copre l'intero riquadro */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px; /* Mostra solo 3 repository alla volta */
+  padding: 1.5rem;
+  text-align: center;
+  scroll-snap-align: center;
+  color: white;
+  font-size: 1rem; /* Font ridotto per il titolo */
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#repo-list li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#repo-list li a {
+  color: white; /* Titolo ben visibile */
+  text-decoration: none;
+  font-size: 1.2rem; /* Titolo ridotto */
+}
+
+#repo-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Aggiunge uno stile ai pulsanti di navigazione */
+.scroll-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+#scroll-left {
+  left: 10px;
+}
+
+#scroll-right {
+  right: 10px;
+}
+
+#repositories {
+  position: relative;
+}

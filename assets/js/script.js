@@ -41,3 +41,38 @@ window.onload = function () {
         document.getElementById('cookieConsent').style.display = 'none';
     }
 };
+
+document.addEventListener('DOMContentLoaded', function () {
+    const repoList = document.getElementById('repo-list');
+    const scrollLeftBtn = document.getElementById('scroll-left');
+    const scrollRightBtn = document.getElementById('scroll-right');
+
+    fetch('https://api.github.com/users/emkeyhell/repos')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(repo => {
+                const repoItem = document.createElement('li');
+                repoItem.innerHTML = `
+                    <a href="${repo.html_url}" target="_blank">${repo.name}</a>
+                `;
+                repoList.appendChild(repoItem);
+            });
+        })
+        .catch(error => console.error('Errore nel recuperare le repository:', error));
+
+    // Scorrimento a destra
+    scrollRightBtn.addEventListener('click', () => {
+        repoList.scrollBy({
+            left: 300, // Scorre verso destra
+            behavior: 'smooth'
+        });
+    });
+
+    // Scorrimento a sinistra
+    scrollLeftBtn.addEventListener('click', () => {
+        repoList.scrollBy({
+            left: -300, // Scorre verso sinistra
+            behavior: 'smooth'
+        });
+    });
+});
