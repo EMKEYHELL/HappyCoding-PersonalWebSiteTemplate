@@ -16,6 +16,7 @@ header {
   margin: 0;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
+  position: relative;
 }
 
 header img.banner {
@@ -113,7 +114,6 @@ h1, h2 {
   transition: box-shadow 0.3s, transform 0.3s, color 0.3s;
 }
 
-
 .social-icon, .skill-icon {
   width: 30px;
   height: 30px;
@@ -150,19 +150,20 @@ footer p {
   transition: all 0.3s ease-in-out;
 }
 
+/* Sezione repository */
 #repositories {
   padding: 2rem 1rem;
-  max-width: 900px; /* Uniforma la larghezza rispetto alle altre sezioni */
+  max-width: 900px;
   margin: 2rem auto;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Limita il contenuto visibile */
+  overflow: hidden;
 }
 
 #repo-list {
   display: flex;
-  overflow-x: scroll; /* Permette lo scorrimento orizzontale */
+  overflow-x: scroll;
   scroll-snap-type: x mandatory;
   list-style-type: none;
   padding: 0;
@@ -172,15 +173,15 @@ footer p {
 
 #repo-list li {
   background: url('https://r2.fivemanage.com/pub/cwiyl8bgbzq7.png') no-repeat center center;
-  background-size: cover; /* Copre l'intero riquadro */
+  background-size: cover;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 300px; /* Mostra solo 3 repository alla volta */
+  width: 300px;
   padding: 1.5rem;
   text-align: center;
   scroll-snap-align: center;
   color: white;
-  font-size: 1rem; /* Font ridotto per il titolo */
+  font-size: 1rem;
   font-weight: bold;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -191,16 +192,16 @@ footer p {
 }
 
 #repo-list li a {
-  color: white; /* Titolo ben visibile */
+  color: white;
   text-decoration: none;
-  font-size: 1.2rem; /* Titolo ridotto */
+  font-size: 1.2rem;
 }
 
 #repo-list li a:hover {
   text-decoration: underline;
 }
 
-/* Aggiunge uno stile ai pulsanti di navigazione */
+/* Pulsanti di scorrimento */
 .scroll-button {
   background-color: #007bff;
   color: white;
@@ -223,4 +224,130 @@ footer p {
 
 #repositories {
   position: relative;
+}
+
+/* Stile per il pulsante Toggle View */
+.btn-toggle {
+  position: fixed;  /* Posizione fissa */
+  top: 20px;        /* Distanza dal bordo superiore */
+  right: 20px;      /* Distanza dal bordo destro */
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;    /* Valore alto di z-index per stare sopra altri elementi */
+  transition: background-color 0.3s ease;
+}
+
+.btn-toggle:hover {
+  background-color: #0056b3;
+}
+
+
+/* Nasconde la sezione quando non visibile */
+#new-content {
+  display: none;
+}
+
+.ide-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.ide-item {
+  text-align: center;
+  width: 120px; /* Aggiunto per assicurare che ogni item abbia la stessa larghezza */
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: black;
+}
+
+.ide-item:hover {
+  transform: scale(1.1);
+}
+
+.ide-logo {
+  width: 80px;
+  height: 80px; /* Imposta un'altezza fissa per uniformare tutti i loghi */
+  transition: opacity 0.3s ease;
+}
+
+.ide-item:hover .ide-logo {
+  opacity: 0.8;
+}
+
+.ide-item p {
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.zorin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.zorin-item {
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: black;
+}
+
+.zorin-item:hover {
+  transform: scale(1.1);
+}
+
+.zorin-logo {
+  width: 120px;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.zorin-item:hover .zorin-logo {
+  opacity: 0.8;
+}
+
+.zorin-description {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  max-width: 600px;
+}
+
+.itchio-container, .game-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.itchio-item, .game-review {
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  color: black;
+}
+
+.itchio-logo, .game-logo {
+  width: 150px;
+  height: auto;
+  transition: opacity 0.3s ease;
+}
+
+.itchio-item:hover .itchio-logo, .game-review:hover .game-logo {
+  opacity: 0.8;
+}
+
+.itchio-description, .game-description {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  max-width: 600px;
 }

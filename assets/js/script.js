@@ -29,20 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     closeModal.addEventListener('click', function () {
         modal.style.display = 'none';
     });
-});
 
-document.getElementById('acceptCookies').addEventListener('click', function () {
-    document.getElementById('cookieConsent').style.display = 'none';
-    localStorage.setItem('cookieConsentAccepted', 'true');
-});
-
-window.onload = function () {
-    if (localStorage.getItem('cookieConsentAccepted') === 'true') {
-        document.getElementById('cookieConsent').style.display = 'none';
-    }
-};
-
-document.addEventListener('DOMContentLoaded', function () {
+    // Repository logic
     const repoList = document.getElementById('repo-list');
     const scrollLeftBtn = document.getElementById('scroll-left');
     const scrollRightBtn = document.getElementById('scroll-right');
@@ -75,4 +63,37 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     });
+
+    
+
+    // Toggle view logic
+    const toggleButton = document.getElementById('toggle-view');
+    const mainContent = document.getElementById('main-content');
+    const newContent = document.getElementById('new-content');
+
+    toggleButton.addEventListener('click', function () {
+        if (mainContent.style.display === 'none') {
+            mainContent.style.display = 'block';
+            newContent.style.display = 'none';
+            this.textContent = 'Toggle View';
+        } else {
+            mainContent.style.display = 'none';
+            newContent.style.display = 'block';
+            this.textContent = 'Torna al sito';
+        }
+    });
 });
+
+// Cookie consent logic
+document.getElementById('acceptCookies').addEventListener('click', function () {
+    document.getElementById('cookieConsent').style.display = 'none';
+    localStorage.setItem('cookieConsentAccepted', 'true');
+});
+
+window.onload = function () {
+    if (localStorage.getItem('cookieConsentAccepted') === 'true') {
+        document.getElementById('cookieConsent').style.display = 'none';
+    }
+};
+
+
